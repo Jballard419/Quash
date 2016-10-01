@@ -27,6 +27,7 @@ typedef struct Job{
  Command cmd;
  char* command;
  pid_t first;
+ pid_t last;
  bool bg;
  int  done;
  struct pidQueue pids;
@@ -99,25 +100,25 @@ void check_jobs_bg_status() {
   int j_num = 0;
   int j_done =0;
   //printf("%d\n",l_queue );
-  int status;
+  int status =0;
+  int tpid;
+  int done=1;
+  struct Job testJob;
   while (j_num < l_queue) {
-    struct Job testJob= pop_front_JobQueue(&globalState.job_queue);
-    int tpid;
-    int done=1;
-    size_t pcheck = 0;
-    while ( pcheck < length_pidQueue(&testJob.pids)) {
-      int tpid = pop_front_pidQueue(&testJob.pids);
+    testJob= pop_front_JobQueue(&globalState.job_queue);
+    // size_t pcheck = 0;
+    // while ( pcheck < length_pidQueue(&testJob.pids)) {
+      tpid = testJob.first;
       if (waitpid(tpid, &status, WNOHANG)== 0) {
         done= 0;
-
       }
-      push_back_pidQueue(&testJob.pids, tpid);
+      //push_back_pidQueue(&testJob.pids, tpid);
 
-      pcheck++;
-    }
+      //pcheck++;
+    // }
 
-if (done){
-        print_job_bg_complete(testJob.job_id, tpid,  testJob.command);
+    if (done){
+      print_job_bg_complete(testJob.job_id, tpid,  testJob.command);
     }else {
       push_back_JobQueue(&globalState.job_queue, testJob);
     }
@@ -225,7 +226,7 @@ void run_kill(KillCommand cmd) {
       pid_t tempPid;
       for(int i = 0; i < z; i++){
         tempPid = pop_front_pidQueue(&tempJob.pids);
-        kill(tempPid, cmd.sig);
+        kill(tempPid, 9);
       }
       break;
     }
@@ -440,16 +441,15 @@ void create_process(CommandHolder holder, int p_num, int plumber_pipes[2][2], st
 
     if (holder.flags& BACKGROUND){
       if (p_in) {
-            pushpid(j->job_id, pid_id,0);/* code */
+        pushpid(j->job_id, pid_id,0);/* code */
       }else{
-      pushpid(j->job_id, pid_id,1);
-      j->first= pid_id;
+        pushpid(j->job_id, pid_id,1);
+        j->first= pid_id;
+      }
+      if(!p_out){
+        j->last = pid_id;
+      }
     }
-    }
-    //printf("%s\n", "parent");
-    // if(!p_in){
-    //   j->first = pid_id;
-    // }
     if(get_command_type(holder.cmd) == CD || get_command_type(holder.cmd) == EXPORT || get_command_type(holder.cmd) == JOBS )
       parent_run_command(holder.cmd);
 

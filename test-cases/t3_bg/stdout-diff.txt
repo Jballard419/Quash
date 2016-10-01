@@ -1,3 +1,4 @@
-4a5,6
+3a4,6
+> Completed: 	[2]	#PID#	echo world & 
 > hello
 > Completed: 	[1]	#PID#	delayed_echo hello 2 & 

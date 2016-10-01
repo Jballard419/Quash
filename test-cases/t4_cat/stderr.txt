@@ -1,60 +1,60 @@
-==11484== Memcheck, a memory error detector
-==11484== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==11484== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==11484== Command: /home/jballard/EECS678/quash/quash
-==11484== 
-==11484== Syscall param wait4(status) points to unaddressable byte(s)
-==11484==    at 0x4F00500: wait (in /usr/lib64/libc-2.23.so)
-==11484==    by 0x404911: create_process (execute.c:460)
-==11484==    by 0x404CEE: run_script (execute.c:538)
-==11484==    by 0x401418: main (quash.c:114)
-==11484==  Address 0x2cdd is not stack'd, malloc'd or (recently) free'd
-==11484== 
-==11485== 
-==11485== HEAP SUMMARY:
-==11485==     in use at exit: 1,040 bytes in 1 blocks
-==11485==   total heap usage: 8 allocs, 7 frees, 1,067,426 bytes allocated
-==11485== 
-==11485== LEAK SUMMARY:
-==11485==    definitely lost: 0 bytes in 0 blocks
-==11485==    indirectly lost: 0 bytes in 0 blocks
-==11485==      possibly lost: 0 bytes in 0 blocks
-==11485==    still reachable: 1,040 bytes in 1 blocks
-==11485==         suppressed: 0 bytes in 0 blocks
-==11485== Reachable blocks (those to which a pointer was found) are not shown.
-==11485== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==11485== 
-==11485== For counts of detected and suppressed errors, rerun with: -v
-==11485== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-==11486== 
-==11486== HEAP SUMMARY:
-==11486==     in use at exit: 1,040 bytes in 1 blocks
-==11486==   total heap usage: 14 allocs, 13 frees, 1,069,620 bytes allocated
-==11486== 
-==11486== LEAK SUMMARY:
-==11486==    definitely lost: 0 bytes in 0 blocks
-==11486==    indirectly lost: 0 bytes in 0 blocks
-==11486==      possibly lost: 0 bytes in 0 blocks
-==11486==    still reachable: 1,040 bytes in 1 blocks
-==11486==         suppressed: 0 bytes in 0 blocks
-==11486== Reachable blocks (those to which a pointer was found) are not shown.
-==11486== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==11486== 
-==11486== For counts of detected and suppressed errors, rerun with: -v
-==11486== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-==11484== 
-==11484== HEAP SUMMARY:
-==11484==     in use at exit: 1,040 bytes in 1 blocks
-==11484==   total heap usage: 35 allocs, 34 frees, 1,077,112 bytes allocated
-==11484== 
-==11484== LEAK SUMMARY:
-==11484==    definitely lost: 0 bytes in 0 blocks
-==11484==    indirectly lost: 0 bytes in 0 blocks
-==11484==      possibly lost: 0 bytes in 0 blocks
-==11484==    still reachable: 1,040 bytes in 1 blocks
-==11484==         suppressed: 0 bytes in 0 blocks
-==11484== Reachable blocks (those to which a pointer was found) are not shown.
-==11484== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==11484== 
-==11484== For counts of detected and suppressed errors, rerun with: -v
-==11484== ERROR SUMMARY: 5 errors from 1 contexts (suppressed: 0 from 0)
+==23605== Memcheck, a memory error detector
+==23605== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==23605== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==23605== Command: /home/oalzubbi/678/quash/quash
+==23605== 
+==23605== Syscall param wait4(status) points to unaddressable byte(s)
+==23605==    at 0x4F00500: wait (in /usr/lib64/libc-2.23.so)
+==23605==    by 0x4048DD: create_process (execute.c:460)
+==23605==    by 0x404CBA: run_script (execute.c:538)
+==23605==    by 0x401418: main (quash.c:114)
+==23605==  Address 0x5cc6 is not stack'd, malloc'd or (recently) free'd
+==23605== 
+==23750== 
+==23750== HEAP SUMMARY:
+==23750==     in use at exit: 1,040 bytes in 1 blocks
+==23750==   total heap usage: 8 allocs, 7 frees, 1,067,426 bytes allocated
+==23750== 
+==23750== LEAK SUMMARY:
+==23750==    definitely lost: 0 bytes in 0 blocks
+==23750==    indirectly lost: 0 bytes in 0 blocks
+==23750==      possibly lost: 0 bytes in 0 blocks
+==23750==    still reachable: 1,040 bytes in 1 blocks
+==23750==         suppressed: 0 bytes in 0 blocks
+==23750== Reachable blocks (those to which a pointer was found) are not shown.
+==23750== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==23750== 
+==23750== For counts of detected and suppressed errors, rerun with: -v
+==23750== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==23772== 
+==23772== HEAP SUMMARY:
+==23772==     in use at exit: 1,040 bytes in 1 blocks
+==23772==   total heap usage: 14 allocs, 13 frees, 1,069,684 bytes allocated
+==23772== 
+==23772== LEAK SUMMARY:
+==23772==    definitely lost: 0 bytes in 0 blocks
+==23772==    indirectly lost: 0 bytes in 0 blocks
+==23772==      possibly lost: 0 bytes in 0 blocks
+==23772==    still reachable: 1,040 bytes in 1 blocks
+==23772==         suppressed: 0 bytes in 0 blocks
+==23772== Reachable blocks (those to which a pointer was found) are not shown.
+==23772== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==23772== 
+==23772== For counts of detected and suppressed errors, rerun with: -v
+==23772== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==23605== 
+==23605== HEAP SUMMARY:
+==23605==     in use at exit: 1,040 bytes in 1 blocks
+==23605==   total heap usage: 35 allocs, 34 frees, 1,077,240 bytes allocated
+==23605== 
+==23605== LEAK SUMMARY:
+==23605==    definitely lost: 0 bytes in 0 blocks
+==23605==    indirectly lost: 0 bytes in 0 blocks
+==23605==      possibly lost: 0 bytes in 0 blocks
+==23605==    still reachable: 1,040 bytes in 1 blocks
+==23605==         suppressed: 0 bytes in 0 blocks
+==23605== Reachable blocks (those to which a pointer was found) are not shown.
+==23605== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==23605== 
+==23605== For counts of detected and suppressed errors, rerun with: -v
+==23605== ERROR SUMMARY: 5 errors from 1 contexts (suppressed: 0 from 0)
